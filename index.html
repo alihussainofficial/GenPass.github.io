@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>PassGen</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Dancing+Script&family=Mochiy+Pop+One&family=Poppins:ital,wght@1,500;1,600&family=Satisfy&family=Tangerine:wght@700&display=swap" rel="stylesheet">
+</head>
+<style>
+   
+    body {
+        margin: 0px;
+        padding: 0px;
+        background-color: blueviolet;
+        z-index: -1;
+        font-family: 'Poppins', sans-serif;
+        
+        
+    }
+
+    .box {
+
+        display: inline-block;
+        width: 400px;
+        height: 190px;
+        margin: auto;
+        border-radius: 10px;
+        
+        border: 2px solid blue;
+        background-color: white;
+       
+
+    }
+
+    h3 {
+        font-weight: 900;
+        padding: 5px;
+        display: flexbox;
+        
+        width: 390px;
+        text-align: center;
+        
+
+
+    }
+
+    input {
+        text-align: center;
+        display: flex;
+        padding: 5px;
+        width: 200px;
+        height: 20px;
+        margin: auto;
+        margin-top: 40px;
+        background-color: white;
+        border-radius: 5px;
+        border: 2px solid blue;
+    }
+    
+
+    .btn {
+        display: inline-block;
+        padding: 0px;
+        margin-top: 15px;
+        margin-left: 200px;
+        
+        
+    }
+    #btn1{
+        border: 2px solid blue;
+        display: inline-block;
+        border-radius: 5px;
+        color: black;
+        background-color: white;
+        padding: 3px
+    }
+    #button{
+        border: 2px solid blue;
+        border-radius: 5px;
+        color: black;
+        background-color: white;
+        
+        
+        padding: 3px;
+    }
+    #btn1:hover{
+        /* background-color: white;
+        color: blue; */
+        background-color: blue;
+        color: white;
+        cursor: pointer;
+        
+    }
+    #button:hover{
+        /* background-color: white;
+        color: blue; */
+        background-color: blue;
+        color: white;
+        cursor: pointer;
+    }
+    .container{
+        width: 400px;
+        margin: auto;
+        margin-top: 150px;
+    }
+</style>
+
+<body>
+    <div class="container">
+        <div class="box">
+            <h3>Random Password Generator</h3>
+
+            <div class="disp">
+                <input id="password" type="text" placeholder="Password">
+            </div>
+            <div class="btn">
+                <div id="btn1" onclick="genPassword()">Generate</div></th>
+              
+                <a  id="button" class="btn2" onclick="copyPassword()">Copy</a>
+            </div>
+    </div>
+
+
+
+    <script src="" async defer></script>
+</body>
+<script>
+    var password=document.getElementById("password");
+
+function genPassword() {
+   var chars = "0123456789abcdefghijklmnopqrstuvwxyz!@#$%^&*()ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+   var passwordLength = 8;
+   var password = "";
+for (var i = 0; i <= passwordLength; i++) {
+  var randomNumber = Math.floor(Math.random() * chars.length);
+  password += chars.substring(randomNumber, randomNumber +1);
+ }
+       document.getElementById("password").value = password;
+}
+
+function copyPassword() {
+ var copyText = document.getElementById("password");
+ copyText.select();
+ document.execCommand("copy");  
+}
+</script>
+
+</html>
